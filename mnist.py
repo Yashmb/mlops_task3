@@ -21,6 +21,7 @@ from keras.optimizers import RMSprop
 model.compile(optimizer=RMSprop(), loss='categorical_crossentropy', metrics=['accuracy'])
 model = model.fit(X_train, y_train_cat, epochs=2)
 acc=model.history['accuracy'][-1:][0]
+acc=acc*100
 import sys
 acc_file = open('acc.txt', 'w')
 print(acc, file=acc_file)
